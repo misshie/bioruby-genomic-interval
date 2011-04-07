@@ -15,8 +15,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "bio-genomic-interval"
   gem.homepage = "http://github.com/misshie/bioruby-genomic-interval"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{a BioRuby plugin: handling genomic interavals and overlaps}
+  gem.description =
+    %Q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervalsrake }
   gem.email = "missy@be.to"
   gem.authors = ["Hiroyuki Mishima"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

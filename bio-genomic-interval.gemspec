@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bio-genomic-interval}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Hiroyuki Mishima"]
   s.date = %q{2011-04-07}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervalsrake }
   s.email = %q{missy@be.to}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -20,10 +20,12 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "bio-genomic-interval.gemspec",
     "lib/bio-genomic-interval.rb",
     "spec/bio-genomic-interval_spec.rb",
     "spec/spec_helper.rb"
@@ -32,7 +34,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{a BioRuby plugin: handling genomic interavals and overlaps}
   s.test_files = [
     "spec/bio-genomic-interval_spec.rb",
     "spec/spec_helper.rb"
