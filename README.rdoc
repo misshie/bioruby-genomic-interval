@@ -35,10 +35,26 @@ Last one is generated from a "Zero-based half-closed[start, end)"  interval
  ref.adjacent = 1
  ref.compare(cmp) # => :right_off
 
+== Overlap metrics
+* When a overlap exist, return a positive integers (>1) for the overlap length.
+* When a overlap does not exist, return a zero or a negative (<= 0) for the space size between the intervals.
+
+ ref = Bio::GenomicInterval.parse("chr1:10-20")
+ cmp = Bio::GenomicInterval.parse("chr1:15-25")
+ ref.overlap(cmp) # => 6
+ cmp2 = Bio::GenomicInterval.parse("chr1:25-35")
+ ref.overlap(cmp) # => -4
+
 == Expansion (or integration)
  ref =   Bio::GenomicInterval.parse("chr1:400-600")
  other = Bio::GenomicInterval.parse("chr1:650-800")
  ref.expand(other).to_s # => "chr1:400-800"
+
+== Center
+ obj1 = Bio::GenomicInterval.parse("chr1:1-3")
+ obj1.center # => "chr1:2-2"
+ obj2 = Bio::GenomicInterval.parse("chr2:1-4")
+ obj2.center # => "chr1:2-2"
 
 == and others
 See RDoc and Rspec specification.
