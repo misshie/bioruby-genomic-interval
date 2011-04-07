@@ -1,7 +1,7 @@
 module Bio
 
   #
-  # =a class for manupirate genomic intervals such as "chr1:123-456"
+  # a class for manupirate genomic intervals such as "chr1:123-456"
   #
   class GenomicInterval
     # a default value to determine the adjacent/very near distance in bp 
@@ -19,10 +19,8 @@ module Bio
 
     attr_accessor :chrom, :chr_start, :chr_end, :adjacent
 
-    #
     # generate an interval object from a string expressing 
     # one-based full-closed interval such as "chr1:123-456"
-    # 
     def self.parse(interval)
       chrom, start_end = interval.split(":")
       str_start, str_end = start_end.split("-")[0..1]
@@ -33,45 +31,35 @@ module Bio
         chr_end, chr_start = chr_start, chr_end
       end
       self.new(chrom, chr_start, chr_end)
-  end
+    end
 
-    #
     # generate an interval object from three atguments expressing 
     # zero-based half-closed interval such as "chr1", 122, 456
-    # 
     def self.zero_based(chrom = "", z_start = 0, z_end = 1)
       z_start += 1
       self.new(chrom, z_start, z_end)
     end
 
-    #
     # returns one-based full-closed interval such as "chr1:123-456"
-    #
     def to_s
       "#{@chrom}:#{@chr_start}-#{@chr_end}"
     end
 
-    #
     # returns zero-based half-closed start position
-    # 
     def zero_start
       @chr_start - 1
     end
 
-    #
     # returns zero-based half-closed end position
-    # 
     def zero_end
       @chr_end
     end
 
-    #
     # returns one of the followings:
     #  :different_chrom, :left_adjacent, :right_adjacent
     #  :left_off, :right_off, :equal
     #  :contained, :containing, :left_overlapped, :right_overlapped
     # Imagine that the receiver object is fixed on a number line
-    #
     def compare(other)
       case
       when self.chrom != other.chrom
@@ -137,8 +125,7 @@ module Bio
 
     # * When a overlap exist, return a positive integers (>1) for the overlap length.
     # * When a overlap does not exist, return a zero or a negative (<= 0) for the space size between the intervals.
-    #
-    def overlap(other)
+     def overlap(other)
       case self.compare(other)
       when :different_chrom
         0
@@ -154,5 +141,7 @@ module Bio
         raise Exception, "must not happen"
       end
     end
-  end
-end
+
+  end # class GenomicInterval
+
+end # module Bio
