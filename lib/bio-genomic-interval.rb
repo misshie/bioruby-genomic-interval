@@ -7,6 +7,8 @@ module Bio
     # a default value to determine the adjacent/very near distance in bp 
     DEFAULT_ADJACENT = 20
     
+    attr_accessor :chrom, :chr_start, :chr_end, :adjacent
+
     def initialize(chrom = "", chr_start = 1, chr_end = 1)
       raise ArgumentError unless chr_start >= 1
       raise ArgumentError unless chr_end >= 1
@@ -16,8 +18,6 @@ module Bio
       @chr_end = chr_end
       @adjacent = DEFAULT_ADJACENT
     end
-
-    attr_accessor :chrom, :chr_start, :chr_end, :adjacent
 
     # generate an interval object from a string expressing 
     # one-based full-closed interval such as "chr1:123-456"
