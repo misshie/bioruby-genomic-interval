@@ -43,7 +43,7 @@ Last one is generated from a "Zero-based half-closed[start, end)"  interval
  cmp = Bio::GenomicInterval.parse("chr1:15-25")
  ref.overlap(cmp) # => 6
  cmp2 = Bio::GenomicInterval.parse("chr1:25-35")
- ref.overlap(cmp) # => -4
+ ref.overlap(cmp2) # => -4
 
 == Expansion (or integration)
  ref =   Bio::GenomicInterval.parse("chr1:400-600")
