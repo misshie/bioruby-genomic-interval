@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Hiroyuki Mishima"]
   s.date = %q{2011-04-07}
-  s.description = %q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervalsrake }
+  s.description = %q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervals }
   s.email = %q{missy@be.to}
   s.extra_rdoc_files = [
     "LICENSE.txt",
