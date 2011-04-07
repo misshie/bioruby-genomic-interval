@@ -130,6 +130,14 @@ describe "Bio::GenomicInterval" do
       end
     end
 
+    context 'given "chr1:400-400" (size == 1)' do
+      it 'returns :contained' do
+        receiver = Bio::GenomicInterval.parse("chr1:400-600")
+        subject  = Bio::GenomicInterval.parse("chr1:400-400")
+        receiver.compare(subject).should == :contained
+      end
+    end
+
     context 'given "chr1:300-700"' do
       it 'returns :containing' do
         receiver = Bio::GenomicInterval.parse("chr1:400-600")
@@ -165,6 +173,14 @@ describe "Bio::GenomicInterval" do
       it 'returns :right_adjacent' do
         receiver = Bio::GenomicInterval.parse("chr1:400-600")
         subject  = Bio::GenomicInterval.parse("chr1:300-398")
+        receiver.compare(subject).should == :left_adjacent
+      end
+    end
+ 
+    context 'given "chr1:399-399" (size == 1)' do
+      it 'returns :right_adjacent' do
+        receiver = Bio::GenomicInterval.parse("chr1:400-600")
+        subject  = Bio::GenomicInterval.parse("chr1:399-399")
         receiver.compare(subject).should == :left_adjacent
       end
     end

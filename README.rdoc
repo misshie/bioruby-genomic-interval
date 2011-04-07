@@ -56,8 +56,18 @@ Last one is generated from a "Zero-based half-closed[start, end)"  interval
  obj2 = Bio::GenomicInterval.parse("chr2:1-4")
  obj2.center # => "chr1:2-2"
 
-== and others
-See RDoc and Rspec specification.
+== And others
+ ref =   Bio::GenomicInterval.parse("chr1:400-600")
+ other = Bio::GenomicInterval.parse("chr1:605-800")
+ ref.overlapped?(other) # => false
+ ref.nearly_overlapped?(other) # => true
+ ref.size # => 201
+ ref.chr_start -= 100
+ ref.chr_end += 100
+ ref.chrom = "chrX"
+ ref.to_s # => "chrX:300-700"
+
+See also the Rspec file.
 
 == Contributing to bio-genomic-interval
 Please do not hesitate to contanct the author by emails.
