@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bio-genomic-interval}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Hiroyuki Mishima"]
   s.date = %q{2011-04-18}
-  s.description = %q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervals }
+  s.description = %q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlap state between two intervals }
   s.email = %q{missy@be.to}
   s.extra_rdoc_files = [
     "LICENSE.txt",
