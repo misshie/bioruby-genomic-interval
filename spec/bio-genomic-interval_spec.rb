@@ -60,6 +60,15 @@ describe "Bio::GenomicInterval" do
     end
   end
 
+  describe ".zero_based" do
+    context 'given ("chr1", 100, 100) <e.g. insertion position>' do
+      it 'represents "chr1:101-101" by the to_s method' do
+        Bio::GenomicInterval.zero_based("chr1", 100, 100).to_s.should == "chr1:101-101"
+      end 
+    end
+  end
+
+
   #
   # instance methods
   #

@@ -11,7 +11,8 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
+  # gem is a Gem::Specification...
+  # see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "bio-genomic-interval"
   gem.homepage = "http://github.com/misshie/bioruby-genomic-interval"
   gem.license = "MIT"
@@ -20,8 +21,10 @@ Jeweler::Tasks.new do |gem|
     %Q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervals }
   gem.email = "missy@be.to"
   gem.authors = ["Hiroyuki Mishima"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
+  # Include your dependencies below.
+  # Runtime dependencies are required when using your gem,
+  # and development dependencies are only needed for development
+  # (ie running rake tasks, tests, etc)
   #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end

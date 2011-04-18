@@ -36,6 +36,7 @@ module Bio
     # generate an interval object from three atguments expressing 
     # zero-based half-closed interval such as "chr1", 122, 456
     def self.zero_based(chrom = "", z_start = 0, z_end = 1)
+      z_end += 1 if (z_start == z_end)
       z_start += 1
       self.new(chrom, z_start, z_end)
     end
