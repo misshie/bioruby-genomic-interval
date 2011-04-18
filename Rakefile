@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{a BioRuby plugin: handling genomic interavals and overlaps}
   gem.description =
-    %Q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlaps between two intervals }
+    %Q{a BioRuby plugin: handling genomic intervals,such as "chr1:123-456", and overlap state between two intervals }
   gem.email = "missy@be.to"
   gem.authors = ["Hiroyuki Mishima"]
   # Include your dependencies below.

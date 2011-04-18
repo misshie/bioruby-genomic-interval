@@ -59,7 +59,7 @@ module Bio
     # returns one of the followings:
     #  :different_chrom, :left_adjacent, :right_adjacent
     #  :left_off, :right_off, :equal
-    #  :contained, :containing, :left_overlapped, :right_overlapped
+    #  :contained_by, :contains, :left_overlapped, :right_overlapped
     # Imagine that the receiver object is fixed on a number line
     def compare(other)
       case
@@ -78,10 +78,10 @@ module Bio
         :equal
       when (other.chr_start.between?(self.chr_start, self.chr_end)) &&
           (other.chr_end.between?(self.chr_start, self.chr_end))
-        :contained
+        :contained_by
       when (self.chr_start.between?(other.chr_start, other.chr_end)) &&
           (self.chr_end.between?(other.chr_start, other.chr_end))
-        :containing
+        :contains
       when (other.chr_start < self.chr_start) &&
           (other.chr_end.between?(self.chr_start, self.chr_end))
         :left_overlapped
@@ -96,13 +96,13 @@ module Bio
     def nearly_overlapped?(other)
       result = compare(other)
       [ :left_adjacent, :right_adjacent,
-        :equal, :contained, :containing,
+        :equal, :contained_by, :contains,
         :left_overlapped, :right_overlapped].any?{|x| x == result} 
     end
 
     def overlapped?(other)
       result = compare(other)
-      [ :equal, :contained, :containing,
+      [ :equal, :contained_by, :contains,
         :left_overlapped, :right_overlapped].any?{|x| x == result} 
     end
 
@@ -132,9 +132,9 @@ module Bio
         0
       when :left_off, :left_adjacent, :left_overlapped
         other.chr_end - self.chr_start + 1
-      when :contained, :equal
+      when :contained_by, :equal
         other.size
-      when :containing
+      when :contains
         self.size
       when :right_off, :right_adjacent, :right_overlapped
         self.chr_end - other.chr_start + 1

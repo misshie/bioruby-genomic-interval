@@ -27,7 +27,7 @@ Last one is generated from a "Zero-based half-closed[start, end)"  interval
  d.to_s # => "chr1:101-101"
  d.length # => 1
 
-In the BED format, an insertion position is "chr1:100-100", whose size is 0.
+In the BED format, an insertion position is like "chr1:100-100", whose size is 0.
 This interval is converted into "chr1:101-101" in the one-based format.
 Note that size is changed to 1.
 

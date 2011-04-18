@@ -132,26 +132,26 @@ describe "Bio::GenomicInterval" do
     end
 
     context 'given "chr1:450-550"' do
-      it 'returns :contained' do
+      it 'returns :contained_by' do
         receiver = Bio::GenomicInterval.parse("chr1:400-600")
         subject  = Bio::GenomicInterval.parse("chr1:450-550")
-        receiver.compare(subject).should == :contained
+        receiver.compare(subject).should == :contained_by
       end
     end
 
     context 'given "chr1:400-400" (size == 1)' do
-      it 'returns :contained' do
+      it 'returns :contained_by' do
         receiver = Bio::GenomicInterval.parse("chr1:400-600")
         subject  = Bio::GenomicInterval.parse("chr1:400-400")
-        receiver.compare(subject).should == :contained
+        receiver.compare(subject).should == :contained_by
       end
     end
 
     context 'given "chr1:300-700"' do
-      it 'returns :containing' do
+      it 'returns :contains' do
         receiver = Bio::GenomicInterval.parse("chr1:400-600")
         subject  = Bio::GenomicInterval.parse("chr1:300-700")
-        receiver.compare(subject).should == :containing
+        receiver.compare(subject).should == :contains
       end
     end
 
