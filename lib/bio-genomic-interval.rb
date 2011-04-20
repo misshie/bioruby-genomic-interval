@@ -25,8 +25,8 @@ module Bio
       chrom, start_end = interval.split(":")
       str_start, str_end = start_end.split("-")[0..1]
       str_end = str_start if str_end.nil?
-      chr_start = Integer(str_start)
-      chr_end   = Integer(str_end)
+      chr_start = Integer(str_start.gsub(",",""))
+      chr_end   = Integer(str_end.gsub(",",""))
       if chr_start > chr_end
         chr_end, chr_start = chr_start, chr_end
       end

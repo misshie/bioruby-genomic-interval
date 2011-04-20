@@ -50,6 +50,13 @@ describe "Bio::GenomicInterval" do
         Bio::GenomicInterval.parse("chr1:123").to_s.should == "chr1:123-123"
       end
     end
+
+    context 'given "chr1:1,234,567-2,345,678"' do
+      it 'ignores commas and represents "chr1:1234567-2345678"' do
+        istr = "chr1:1,234,567-2,345,678"
+        Bio::GenomicInterval.parse(istr).to_s.should == "chr1:1234567-2345678"
+      end
+    end
   end
 
   describe ".zero_based" do
@@ -360,7 +367,6 @@ describe "Bio::GenomicInterval" do
         receiver.overlap(subject).should == 0
       end
     end
-
   end
 
 end
