@@ -55,7 +55,7 @@ Bio::GenomicInterval.compare returns one of the followings:
  :contained_by, :contains, :left_overlapped, :right_overlapped
 
 == Overlap metrics
-* When a overlap exist, return a positive integers (>1) for the overlap length.
+* When a overlap exist, return a positive integers (>=1) for the overlap length.
 * When a overlap does not exist, return a zero or a negative (<= 0) for the space size between the intervals.
 
  ref = Bio::GenomicInterval.parse("chr1:10-20")

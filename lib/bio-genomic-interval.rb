@@ -126,7 +126,7 @@ module Bio
 
     # * When a overlap exist, return a positive integers (>1) for the overlap length.
     # * When a overlap does not exist, return a zero or a negative (<= 0) for the space size between the intervals.
-     def overlap(other)
+    def overlap(other)
       case self.compare(other)
       when :different_chrom
         0
@@ -144,5 +144,4 @@ module Bio
     end
 
   end # class GenomicInterval
-
 end # module Bio
